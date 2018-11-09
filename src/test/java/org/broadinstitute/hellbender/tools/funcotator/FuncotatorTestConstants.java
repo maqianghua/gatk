@@ -35,6 +35,8 @@ public class FuncotatorTestConstants {
     public static final String FUNCOTATOR_DATA_SOURCES_MAIN_FOLDER        = FUNCOTATOR_LARGE_FILES_DIR + "funcotator_dataSources" + File.separator;
     /** Local folder containing data sources that point to the cloud. */
     public static final String FUNCOTATOR_DATA_SOURCES_LOCAL_CLOUD_FOLDER = FUNCOTATOR_LARGE_FILES_DIR + "funcotator_dataSources_cloud" + File.separator;
+    /** Local folder containing local data sources and one that points to gnomAD on the cloud. */
+    public static final String FUNCOTATOR_DATA_SOURCES_LOCAL_CLOUD_GNOMAD_FOLDER = FUNCOTATOR_LARGE_FILES_DIR + "funcotator_dataSources_cloud_gnomad" + File.separator;
     /** Cloud-based folder containing data sources that point to the cloud. */
     public static final String FUNCOTATOR_DATA_SOURCES_REMOTE_CLOUD_FOLDER = "gs://hellbender/test/resources/large/funcotatorDataSourceCollection/funcotator_dataSources_cloud" + File.separator;
 

@@ -284,6 +284,7 @@ if [[ $r -eq 0 ]] && ${doRunLargeTests} ; then
 	else
 		INPUT=/Users/jonn/Development/FUNCOTATOR_LARGE_TEST_INPUTS/hg38_trio.vcf
 		#INPUT=/Users/jonn/Development/gatk/src/test/resources/large/funcotator/regressionTestVariantSetHG38.vcf
+		#INPUT=/Users/jonn/Development/tmp/cohort24_23_seg.subset.vcf
 		REF=$HG38
 	fi
 
@@ -291,7 +292,7 @@ if [[ $r -eq 0 ]] && ${doRunLargeTests} ; then
 	$useAOUDataSources && echo "Using AOU data sources." && DATA_SOURCES_PATH=/Users/jonn/Development/funcotator_dataSources.vAoU3
 
   # Use cloud data sources if we need them:
-	$useCloudDataSources && echo "Using cloud data sources." && DATA_SOURCES_PATH=/Users/jonn/Development/gatk/src/test/resources/large/funcotator/funcotator_dataSources_cloud/
+	$useCloudDataSources && echo "Using cloud data sources." && DATA_SOURCES_PATH=/Users/jonn/Development/gatk/src/test/resources/large/funcotator/funcotator_dataSources_cloud_gnomad/
 	#$useCloudDataSources && echo "Using cloud data sources." && DATA_SOURCES_PATH=gs://hellbender/test/resources/large/funcotatorDataSourceCollection/funcotator_dataSources_cloud/
 
 	OUT_FORMAT_LOWER=$( echo "${OUT_FORMAT}" | tr 'A-Z' 'a-z' )
