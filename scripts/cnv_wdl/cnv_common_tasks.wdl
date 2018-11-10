@@ -341,7 +341,7 @@ task PostprocessGermlineCNVCalls {
     String genotyped_intervals_vcf_filename = "genotyped-intervals-${entity_id}.vcf.gz"
     String genotyped_segments_vcf_filename = "genotyped-segments-${entity_id}.vcf.gz"
 
-    String allosomal_contigs_args = if defined(allosomal_contigs) then prefix("--allosomal-contig ", select_first([allosomal_contigs, []])) else ""
+    String allosomal_contigs_args = if defined(allosomal_contigs) then prefix("--allosomal-contig ", select_first([allosomal_contigs])) else ""
 
     String dollar = "$" #WDL workaround for using array[@], see https://github.com/broadinstitute/cromwell/issues/1819
 
