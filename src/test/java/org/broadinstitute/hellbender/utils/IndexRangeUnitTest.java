@@ -77,6 +77,14 @@ public final class IndexRangeUnitTest extends GATKBaseTest {
     }
 
     @Test(dataProvider = "correctFromToData", dependsOnMethods = "testCorrectConstruction")
+    public void testProduct(final int from, final int to) {
+        final IndexRange range = new IndexRange(from,to);
+        final IntToDoubleFunction func = n -> 1 + n/10;
+        // product is exp sum of logs
+        Assert.assertEquals(range.product(func), Math.exp(IntStream.range(from, to).mapToDouble(x -> Math.log(func.applyAsDouble(x))).sum()), 1.0e-8);
+    }
+
+    @Test(dataProvider = "correctFromToData", dependsOnMethods = "testCorrectConstruction")
     public void testFilter(final int from, final int to) {
         final IndexRange range = new IndexRange(from,to);
         final IntPredicate pred = n -> Math.sin(n) < 0.4;

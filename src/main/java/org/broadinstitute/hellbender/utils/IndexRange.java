@@ -146,6 +146,20 @@ public final class IndexRange {
     }
 
     /**
+     * Multiplies the values of an int -> double function applied to this range
+     *
+     * @param lambda the int -> double function
+     */
+    public double product(final IntToDoubleFunction lambda) {
+        Utils.nonNull(lambda, "the lambda function cannot be null");
+        double result = 1;
+        for (int i = from; i < to; i++) {
+            result *= lambda.applyAsDouble(i);
+        }
+        return result;
+    }
+
+    /**
      * Apply an int -> int function to this range, producing an int[]
      *
      * @param lambda the int -> int function
